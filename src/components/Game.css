@@ -1,59 +1,61 @@
 #game-container {
-    display: flex;
-    gap: 20px;
-    width: 160%;
-    justify-content: space-evenly;
+  display: flex;
+  gap: 20px;
+  width: 200%;
+  justify-content: space-evenly;
 }
-
 svg {
-    height: 550px;
-    background-color: rgb(242, 242, 162);
-    width: 40%;
-    border: 15px solid gray;
+  height: 550px;
+  background-color: rgb(232, 82, 52);
+  width: 40%;
+  /* border: 15px solid gray; */
 }
-
 .board-line {
-    stroke: black;
-    stroke-width: 0.5;
+  stroke: black;
+  stroke-width: 0.5;
 }
-
 .board-circle:hover {
-    fill: red;
-    cursor: pointer;
+  fill: red;
+  cursor: pointer;
 }
-.turn{
-    width: 160%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.homeScreen {
+  width: 150px;
+  height: 40px;
+  margin-top: -1px;
+  float: left;
+  /* margin-top: 530px; */
+  text-align: center;
 }
-.turn h3{
-    background-color: yellowgreen;
-    width: 200px;
-    text-align: center;
-
+.whiteCircle {
+  margin-left: 20%;
 }
-.homeScreen{
-    width: 170px;
-    margin-left: 90%;
-    text-align: center;
+.icon {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: #1a1a1a;
+  padding-right: 3px;
 }
-.wr{
-    margin-left: 20%;
+.white,
+.black {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  
 }
-.qw{
-    width: 20px;
-    height: 20px;
-    border: none;
-    background-color: #1a1a1a;
-    padding-right: 3px;
+.black {
+  background-color: black;
+  
 }
-.white, .black{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: white;
+.turn {
+  width: 250%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.black{
-    background-color: black;
+.turn h3 {
+  width: 200px;
+  text-align: center;
+  padding: 5px;
 }

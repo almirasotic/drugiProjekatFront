@@ -1,13 +1,15 @@
 .backgroundImage {
-  position: fixed;
-  top: 0px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(assets/slika.png);
-  background-size: cover;
-  z-index: -1;
+   background-size: cover;
+  position: absolute;
+  top: 105%;
+  left: 25%;
+  width: 50%;
+  height: 75%;
+  border-radius: 10px; 
+ 
 }
+
+
 .buttonsContainer {
   position: absolute;
   top: 0;
@@ -19,40 +21,76 @@
   align-items: center;
   justify-content: space-between;
 }
-
-.buttonsGroup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 250px;
-  border: 10px dotted red;
-  width: 80%;
+@keyframes moveText {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
 }
 
-.buttonsContainer h1,
-h2 {
-  color: rgb(88, 193, 228);
+.buttonsContainer h1{
+  color: #545454;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  animation: moveText 2s infinite;
+  font-size: 45px;
+  
+}
+.buttonsGroup {
+  display: flex;
+  flex-direction: row; /* Promijenjeno sa 'column' na 'row' */
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
-  font-size: 3.2em;
-  line-height: 1.1;
+  width: 80%;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .buttonsGroup h2 {
+  color: #333; 
+  margin-bottom: 20px; 
+}
+
+.dugmici {
+  background-color: #4caf50; 
   color: white;
-  background-color: brown;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
   border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
-.buttonsGroup select {
-  width: 150px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  height: 40px;
+
+.dugmici:hover {
+  background-color: #3e8e41; 
 }
+
+.buttonsContainer select {
+  padding: 15px 20px; 
+  border-radius: 10px; 
+  margin-top: 50px; 
+  background-color: #f2f2f2; 
+  color: #333; 
+  border: 2px solid #ccc; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  appearance: none; 
+  cursor: pointer; 
+
+  /* Stiliziranje strelice za dropdown */
+  background-image: linear-gradient(45deg, transparent 50%, #333 50%),
+                    linear-gradient(-45deg, transparent 50%, #333 50%);
+  background-position: right 15px top 50%, right 10px top 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+
+  transition: border-color 0.3s, box-shadow 0.3s; 
+}
+
+.buttonsContainer select:hover {
+  border-color: #aaa; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+}
+
 
 button {
   border-radius: 8px;
@@ -61,15 +99,17 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #b31010;
   cursor: pointer;
   transition: border-color 0.25s;
   width: 250px;
   margin-top: 10px;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;

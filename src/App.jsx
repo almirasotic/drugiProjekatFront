@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import "./App.css";
 import Game from "./components/Game";
-import GamePvsC from "./components/GamePvsC";
-import GameCvsC from "./components/GameCvsC";
+import GamePvsC from "./components/CovekVsComp";
+import GameCvsC from "./components/CompVsComp";
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,9 +13,7 @@ import {
 import { MyContext } from "./context/MyContext";
 
 function App() {
-  const { seeButtons, seeButtonsFunction, difficulty, gameDifficultyFunction } =
-    useContext(MyContext);
-
+  const { seeButtons, seeButtonsFunction, difficulty, gameDifficultyFunction } = useContext(MyContext);
   const ButtonClick = (b) => {
     console.log(difficulty);
     seeButtonsFunction();
@@ -25,42 +23,46 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <div className="backgroundImage"></div>
+      
       <Routes>
-        <Route path="/game" element={<Game />} />
-        <Route path="/gamePvsC" element={<GamePvsC />} />
-        <Route path="/gameCvsC" element={<GameCvsC />} />
+        <Route path="/IGRICA" element={<Game />} />
       </Routes>
 
       {seeButtons && (
         <div className="buttonsContainer">
+          <div className="backgroundImage"></div>
           <div>
-            <h1>PyMlin - 9 Man Morris</h1>
+            <h1> 9 Man Morris</h1>
+            <br></br>
+           
           </div>
           <div className="buttonsGroup">
-            <h2>Choose mode</h2>
-            <Link to="/game">
+            
+            <Link to="/IGRICA">
               <button className="dugmici" onClick={ButtonClick}>
-                Player vs Player
+              Igrac vs Igrac 
               </button>
             </Link>
-            <Link to="/gamePvsC">
+            {/* <Link to="/gamePvsC">
               <button className="dugmici" onClick={ButtonClick}>
-                Player vs Computer
+             Igrac vs Comp
               </button>
-            </Link>
-            <Link to="/gameCvsC">
+            </Link> */}
+            {/* <Link to="/gameCvsC">
               <button className="dugmici" onClick={ButtonClick}>
                 Computer vs Computer
               </button>
-            </Link>
-            <select onChange={difficultyChosing}>
+            </Link> */}
+            
+            
+          </div>
+          {/* <select onChange={difficultyChosing}>
               <option value={"easy"}>Easy</option>
               <option value={"medium"}>Medium</option>
               <option value={"hard"}>Hard</option>
-            </select>
-          </div>
+            </select> */}
         </div>
+        
       )}
     </BrowserRouter>
   );
